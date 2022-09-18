@@ -5,84 +5,70 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIGITAL CLOCK PROBLEM-1</title>
-  
+  <title>Digital Clock</title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css" />
+
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-      font-family: monokai;
+    @font-face {
+      font-family: 'Digital-7';
+      src: url('fonts/digital-7.ttf') format('woff2'), b, g, mdrx url('digital-7.woff') format('woff');
     }
 
-    #screen {
-      display: block;
-      background: black;
-      height: 100vh;
-    }
-
-    h1 {
-      font-size: 30px;
-      font-weight: bold;
-      color: white;
+    .mainContainer {
+      background: #141E30;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #243B55, #141E30);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #243B55, #141E30);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding: 25px;
+      max-width: 800px;
+      width: 100%;
       text-align: center;
+      border-radius: 5px;
+      margin: 0 auto;
     }
 
-    #timeZone {
-      display: inline-block;
-      position: fixed;
-      left: 35%;
-      top: 30%;
-      margin: auto;
+    #clock {
+      font-size: 60px;
+      color: #fff;
     }
 
-    #time,
-    #date {
-      text-align: center;
-      color: white;
+    #timeContainer {
+      letter-spacing: 5px;
+      font-size: 34px;
+      font-family: Digital-7, 'sans-serif';
+      color: #fff;
     }
 
-    #time {
-      font-size: 75px;
-      font-weight: bold;
-    }
-
-    #date {
-      font-size: 30px;
-      font-weight: bold;
+    #dateContainer {
+      letter-spacing: 5px;
+      font-size: 34px;
+      font-family: Digital-7, 'sans-serif';
+      color: #fff;
     }
 
     button {
-      align-items: center;
-      background-color: white;
-      width: 30%;
-      font-size: 30px;
-      height: 100%;
-      margin-left: 40px;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background: yellow;
-      color: black;
+      margin: 15px auto;
+      width: 20%;
+      border-radius: 15px 0px 15px 0px;
     }
   </style>
 </head>
 
-<body onload="startTime()">
-  <a src="problem1.html">Problem 1</a>
-  <a src="problem2.html">Problem 2</a>
-  <a src="problem3.html">Problem 3</a>
+<body>
+  <div class="mainContainer">
+    <div id="timeContainer"></div>
+    <div id="dateContainer"></div>
 
-  <div id="screen">
+    <div>
+      <button onclick="stopClock()">Stop</button>
+      <button onclick="startClock()">Start</button>
 
-    <div id="timeZone">
-      <h1> DIGITAL CLOCK</h1>
-      <p id="time"> </p>
-      <p id="date"></p>
-      <button id="start-btn">Start</button>
-      <button id="stop-btn">Stop</button>
     </div>
   </div>
+
+
 
   <script src="script1.js"></script>
 </body>
